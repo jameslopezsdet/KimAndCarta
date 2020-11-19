@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
+        features = {"src/test/resources/features/amazon_purchase.feature"},
         glue = {"org.KimAndCarta.cucumber.steps"},
-        tags = {"@verifyInCart"},
+        tags = {},
         dryRun = false
 
 

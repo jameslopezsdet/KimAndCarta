@@ -1,3 +1,4 @@
+@verifyInCart
 Feature: Assert alexa in the cart
 
   Scenario: Customer searches for third option, from second page for Alexa and puts in cart
