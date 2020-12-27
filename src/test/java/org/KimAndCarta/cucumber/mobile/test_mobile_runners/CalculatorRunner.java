@@ -1,4 +1,4 @@
-package org.KimAndCarta.cucumber.mobile.runner;
+package org.KimAndCarta.cucumber.mobile.test_mobile_runners;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
