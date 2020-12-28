@@ -21,8 +21,10 @@ public class MobileAndroidDriver {
     public static AndroidDriver loadMobileDriver() throws MalformedURLException {
 
         /**
-         * This class, if company is testing in IOS and ANDROID, would read from file reader
-         * and would have a if statement to switch between ANDROID and IOS
+         * This class, if company is testing in IOS and ANDROID,
+         * would have a if statement to switch between ANDROID and IOS, It would also have a
+         * file reader class to eliminate
+         * hardcoded values of DEVICE_NAME, and PLATFORM_VERSION
          */
         String simpleCalculator = "src/test/resources/simple-calculator_2.9.2+.apk";
 
@@ -41,7 +43,7 @@ public class MobileAndroidDriver {
 
 
     /**
-     * IN this method using calculator already installed in Pixel 2, and Pixel 3 phone.
+     * IN this method using calculator already installed in Pixel 2,  phone.
      * Tool creating Emulator is Android Studio
      *
      * @return Mobile driver
