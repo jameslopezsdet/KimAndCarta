@@ -142,7 +142,6 @@ public class CalculatorSteps {
         driverAndroid.pressKey(new KeyEvent(AndroidKey.HOME));
 
          driverAndroid.quit();
-        MobileAndroidDriver.closeServer();
 
 
     }

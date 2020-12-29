@@ -14,9 +14,9 @@ public class Hooks {
     }
 
 
-//    @After
-//    public void stopServer(){
-//        sS.closeServer();
-//    }
+    @After
+    public void stopServer(){
+        sS.closeServer();
+    }
 
 }

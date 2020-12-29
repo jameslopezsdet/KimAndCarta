@@ -120,7 +120,6 @@ public class CalculatorTouchSteps {
                 .moveTo(PointOption.point(538, 97)).release().perform();
 
         driverAndroid.quit();
-        MobileAndroidDriver.closeServer();
     }
 
 
