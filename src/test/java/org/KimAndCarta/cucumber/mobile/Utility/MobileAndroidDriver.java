@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -29,17 +30,26 @@ public class MobileAndroidDriver {
      */
 
     public static AppiumDriverLocalService startServer() {
-        boolean flag = checkIfServerIsStarted(4723);
-        if(!flag)
+        boolean isRunning = checkIfServerIsStarted(4723);
+        if(!isRunning)
         {
         service = AppiumDriverLocalService.buildDefaultService();
+
         service.start();
         }
         return service;
 
     }
     public static void closeServer(){
-        service.stop();
+       // service.stop();
+        Runtime runtime = Runtime.getRuntime();
+        try{
+            String [] command = {"/usr/bin/killall","-9","node" };
+            runtime.exec(command);
+            System.out.println("Server stopped!!!");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     //taskKill /F /IM node.exe
@@ -67,7 +77,7 @@ public class MobileAndroidDriver {
 
         File fs = new File(simpleCalculator);
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 2");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
         cap.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
