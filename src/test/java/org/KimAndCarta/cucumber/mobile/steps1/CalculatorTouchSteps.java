@@ -1,5 +1,7 @@
 package org.KimAndCarta.cucumber.mobile.steps1;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.appium.java_client.TouchAction;
@@ -35,7 +37,7 @@ public class CalculatorTouchSteps {
     @Given("^the user opens the calculator application by swiping$")
     public void the_user_opens_the_calculator_app_by_swiping() throws InterruptedException, MalformedURLException {
         driverAndroid = MobileAndroidDriver.loadMobileDriverWithoutResetingAPP();
-        AndroidElement appsButton = driverAndroid.findElementByAccessibilityId("Apps list");
+       // AndroidElement appsButton = driverAndroid.findElementByAccessibilityId("Apps list");
         TouchAction t = new TouchAction(driverAndroid);
         t.press(PointOption.point(516, 1300)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(2)))
                 .moveTo(PointOption.point(515, 132)).release().perform();
@@ -118,6 +120,8 @@ public class CalculatorTouchSteps {
                 .moveTo(PointOption.point(538, 97)).release().perform();
 
         driverAndroid.quit();
+        MobileAndroidDriver.closeServer();
     }
+
 
 }

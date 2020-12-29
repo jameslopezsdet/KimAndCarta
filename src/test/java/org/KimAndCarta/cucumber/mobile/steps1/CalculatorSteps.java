@@ -1,5 +1,6 @@
 package org.KimAndCarta.cucumber.mobile.steps1;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.appium.java_client.TouchAction;
@@ -32,6 +33,7 @@ public class CalculatorSteps {
 
     public CalculatorSteps() throws MalformedURLException {
     }
+
 
     @Given("^the user opens the calculator app$")
     public void the_user_opens_the_calculator_app() throws Throwable {
@@ -139,8 +141,9 @@ public class CalculatorSteps {
 
         driverAndroid.pressKey(new KeyEvent(AndroidKey.HOME));
 
+         driverAndroid.quit();
+        MobileAndroidDriver.closeServer();
 
-        driverAndroid.quit();
 
     }
 
